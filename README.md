@@ -1,1 +1,1 @@
-# Code Edtor made by Monaco code editor and Chakra Ui
+# Code Editor made by Monaco code editor and Chakra Ui
