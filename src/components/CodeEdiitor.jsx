@@ -1,11 +1,20 @@
 import { Box, HStack } from "@chakra-ui/react";
+import axios from "axios";
 import React, { useRef, useState } from "react";
 import Editor from "@monaco-editor/react";
 import LanguageSelector from "./LanguageSelector";
 import { CODE_SNIPPETS } from "../constants/options";
 import Output from "./Output";
 
+
 function CodeEdiitor() {
+  axios.get('https://emkc.org/api/v2/piston/runtimes')
+  .then(response => {
+    console.log(response.data);
+  })
+  .catch(error => {
+    console.error(error);
+  });
   const editorRef = useRef();
   const [value, setValue] = useState("");
   const [language, setLanguage] = useState("javascript");
